@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Classic FizzBuzz &#8212; FizzBuzz Brainstorm dev documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fizzbuzz module" href="API/fizzbuzz.html" />
+    <link rel="prev" title="Welcome to FizzBuzz Brainstorm’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="classic-fizzbuzz">
+<h1>Classic FizzBuzz<a class="headerlink" href="#classic-fizzbuzz" title="Permalink to this headline">¶</a></h1>
+<p>The classic FizzBuzz problem <a class="reference external" href="https://wiki.c2.com/?FizzBuzzTest">description</a> is as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that prints the numbers from 1 to 100.
+But for multiples of three print “Fizz” instead of the
+number and for the multiples of five print “Buzz”. For
+numbers which are multiples of both three and five print
+“FizzBuzz”.&quot;
+</pre></div>
+</div>
+<p>The solution to the problem has been widely <a class="reference external" href="https://wiki.c2.com/?FizzBuzzTest">discussed</a>.
+One possible solution is the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Fizz&quot;</span>
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Buzz&quot;</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span>
+</pre></div>
+</div>
+<p>I changed the description to the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that generates the numbers from 1 to n.
+But for multiples of three gives “Fizz” instead of the
+number and for the multiples of five gives “Buzz”. For
+numbers which are multiples of both three and five gives
+“FizzBuzz”.&quot;
+</pre></div>
+</div>
+<p>This gives a more flexible solution. To print the results one just needs to use the generator:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fizzbuzz</span> <span class="kn">import</span> <span class="n">classic_fizzbuzz</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">2</span>
+<span class="go">Fizz</span>
+<span class="go">4</span>
+<span class="go">Buzz</span>
+<span class="go">Fizz</span>
+<span class="go">7</span>
+<span class="go">8</span>
+<span class="go">Fizz</span>
+<span class="go">Buzz</span>
+</pre></div>
+</div>
+<p>This allows to store the solution in a container. For example, a list:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">[&#39;1&#39;, &#39;2&#39;, &#39;Fizz&#39;, &#39;4&#39;, &#39;Buzz&#39;, &#39;Fizz&#39;, &#39;7&#39;, &#39;8&#39;, &#39;Fizz&#39;, &#39;Buzz&#39;]</span>
+</pre></div>
+</div>
+<p>Other advantages will be discussed soon in other sections.</p>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FizzBuzz Brainstorm</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classic FizzBuzz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API/fizzbuzz.html">fizzbuzz module</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to FizzBuzz Brainstorm’s documentation!</a></li>
+      <li>Next: <a href="API/fizzbuzz.html" title="next chapter">fizzbuzz module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Ernesto Soto Gómez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/classic_fizzbuzz.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
