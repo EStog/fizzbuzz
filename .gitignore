@@ -69,6 +69,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
+docs/source/_build
 docs/build/
 docs/source/API
 
