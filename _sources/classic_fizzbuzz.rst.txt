@@ -32,7 +32,7 @@ I changed the description to the following::
 
 This gives a more flexible solution. To print the results one just needs to use the generator:
 
->>> from fizzbuzz import classic_fizzbuzz
+>>> from fizzbuzz_lib import classic_fizzbuzz
 >>> for i in classic_fizzbuzz(10):
 ...     print(i)
 1
@@ -54,7 +54,7 @@ This allows to store the solution in a container. For example, a list:
 
 A CLI script `fizzbuzz_cli.py` is available to execute this function from console [#1]:
 
-.. code-block:: console
+.. code-block:: shell
 
     fizzbuzz $> ./fizzbuzz_cli 10
     1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz

@@ -1,0 +1,7 @@
+fizzbuzz\_lib package
+=====================
+
+.. automodule:: fizzbuzz_lib
+   :members:
+   :undoc-members:
+   :show-inheritance:

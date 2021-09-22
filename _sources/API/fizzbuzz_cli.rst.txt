@@ -1,7 +1,0 @@
-fizzbuzz\_cli module
-====================
-
-.. automodule:: fizzbuzz_cli
-   :members:
-   :undoc-members:
-   :show-inheritance:

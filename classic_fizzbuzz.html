@@ -15,7 +15,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="fizzbuzz module" href="API/fizzbuzz.html" />
+    <link rel="next" title="fizzbuzz_lib package" href="API/fizzbuzz_lib.html" />
     <link rel="prev" title="Welcome to FizzBuzz Brainstorm’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -63,7 +63,7 @@ numbers which are multiples of both three and five gives
 </pre></div>
 </div>
 <p>This gives a more flexible solution. To print the results one just needs to use the generator:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fizzbuzz</span> <span class="kn">import</span> <span class="n">classic_fizzbuzz</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fizzbuzz_lib</span> <span class="kn">import</span> <span class="n">classic_fizzbuzz</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
 <span class="go">1</span>
@@ -85,8 +85,8 @@ numbers which are multiples of both three and five gives
 </pre></div>
 </div>
 <p>A CLI script <cite>fizzbuzz_cli.py</cite> is available to execute this function from console [#1]:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">fizzbuzz $&gt; ./fizzbuzz_cli 10</span>
-<span class="go">1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz</span>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fizzbuzz $&gt; ./fizzbuzz_cli <span class="m">10</span>
+<span class="m">1</span> <span class="m">2</span> Fizz <span class="m">4</span> Buzz Fizz <span class="m">7</span> <span class="m">8</span> Fizz Buzz
 </pre></div>
 </div>
 <p class="rubric">Footnotes</p>
@@ -112,7 +112,7 @@ numbers which are multiples of both three and five gives
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Classic FizzBuzz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="API/fizzbuzz.html">fizzbuzz module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API/fizzbuzz_lib.html">fizzbuzz_lib package</a></li>
 </ul>
 
 <div class="relations">
@@ -120,7 +120,7 @@ numbers which are multiples of both three and five gives
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to FizzBuzz Brainstorm’s documentation!</a></li>
-      <li>Next: <a href="API/fizzbuzz.html" title="next chapter">fizzbuzz module</a></li>
+      <li>Next: <a href="API/fizzbuzz_lib.html" title="next chapter">fizzbuzz_lib package</a></li>
   </ul></li>
 </ul>
 </div>
