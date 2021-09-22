@@ -52,4 +52,13 @@ This allows to store the solution in a container. For example, a list:
 >>> a
 ['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz']
 
-Other advantages will be discussed soon in other sections.
+A CLI script `fizzbuzz_cli.py` is available to execute this function from console [#1]:
+
+.. code-block:: console
+
+    fizzbuzz $> ./fizzbuzz_cli 10
+    1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz
+
+.. rubric:: Footnotes
+
+.. #1:: For the sake of simplicity the output is showed after the command, but in fact the output is opened in a new console stream. Try it to see it!
