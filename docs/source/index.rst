@@ -10,7 +10,8 @@ Welcome to FizzBuzz Brainstorm's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   classic_fizzbuzz
+   API/fizzbuzz
 
 Indices and tables
 ==================
