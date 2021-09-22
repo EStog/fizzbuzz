@@ -11,7 +11,7 @@ Welcome to FizzBuzz Brainstorm's documentation!
    :caption: Contents:
 
    classic_fizzbuzz
-   API/fizzbuzz
+   API/fizzbuzz_lib
 
 Indices and tables
 ==================

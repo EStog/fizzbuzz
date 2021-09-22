@@ -62,7 +62,7 @@ html_static_path = ['_static']
 
 
 # sphinxcontrib-apidoc options
-apidoc_module_dir = '../../'
+apidoc_module_dir = '../../fizzbuzz_lib'
 apidoc_output_dir = './API'
 apidoc_separate_modules = True
 apidoc_toc_file = False
