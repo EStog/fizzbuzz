@@ -2,3 +2,5 @@ typer
 shellingham
 colorama
 fastapi[all]
+validators
+requests
