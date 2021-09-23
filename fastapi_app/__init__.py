@@ -1,9 +1,9 @@
 from fastapi import Depends, FastAPI, Query
+from fizzbuzz_lib import classic_fizzbuzz_as_gen_text, classic_fizzbuzz_as_text
 from starlette.responses import PlainTextResponse, StreamingResponse
 
-from constants import (CLASSIC_FIZZBUZZ_PREFIX, N_ARGS_NAME, SEP_ARGS_NAME,
-                       STREAM_PATH)
-from fizzbuzz_lib import classic_fizzbuzz_as_gen_text, classic_fizzbuzz_as_text
+from fastapi_app.constants import (CLASSIC_FIZZBUZZ_PREFIX, N_ARGS_NAME,
+                                   SEP_ARGS_NAME, STREAM_PATH)
 
 app = FastAPI()
 

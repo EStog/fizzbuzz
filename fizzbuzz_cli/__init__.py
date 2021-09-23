@@ -2,14 +2,12 @@
 
 from urllib.parse import urljoin
 
+import fizzbuzz_lib
 import requests
 import typer
 import validators
-
-import fizzbuzz_lib
-from constants import (CLASSIC_FIZZBUZZ_PREFIX, N_ARGS_NAME, SEP_ARGS_NAME,
-                       STREAM_PATH)
-
+from fastapi_app.constants import (CLASSIC_FIZZBUZZ_PREFIX, N_ARGS_NAME,
+                                   SEP_ARGS_NAME, STREAM_PATH)
 
 CLASSIC_FIZZBUZZ_COMMAND = 'cfb'
 CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND = 'cfbw'
