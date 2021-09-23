@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Generator
+from typing import Generator, Iterator
 
 
 def classic_fizzbuzz(n: int) -> Generator[int | str, None, None]:
@@ -45,3 +45,26 @@ def classic_fizzbuzz(n: int) -> Generator[int | str, None, None]:
         if s == '':
             s += str(i)
         yield s if len(s) else i
+
+
+def gen_text(gen: Iterator, sep: str):
+    """Gives the content of ``gen`` as a generator of strings with suffix ``sep``"""
+    return (f'{s}{sep}' for s in gen)
+
+
+def as_text(gen: Iterator, sep: str):
+    """Gives the content of ``gen`` as a text where each element is separated by ``sep``"""
+    s = ''
+    for x in gen_text(gen, sep):
+        s += x
+    return s
+
+
+def classic_fizzbuzz_as_text(n: int, sep: str):
+    """Gives classic FizzBuzz result as a text where each element is separated by ``sep``"""
+    return as_text(classic_fizzbuzz(n), sep)
+
+
+def classic_fizzbuzz_as_gen_text(n: int, sep: str):
+    """Gives classic FizzBuzz result as a generator of strings with suffix ``sep``"""
+    return gen_text(classic_fizzbuzz(n), sep)
