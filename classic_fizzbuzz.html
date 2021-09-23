@@ -46,15 +46,17 @@ numbers which are multiples of both three and five print
 <p>The solution to the problem has been widely <a class="reference external" href="https://wiki.c2.com/?FizzBuzzTest">discussed</a>.
 One possible solution is the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
-  <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Fizz&quot;</span>
-  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-  <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Buzz&quot;</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Fizz&quot;</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="s2">&quot;Buzz&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span>
 </pre></div>
 </div>
-<p>I changed the description to the following:</p>
+<section id="changing-the-description">
+<h2>Changing the description<a class="headerlink" href="#changing-the-description" title="Permalink to this headline">¶</a></h2>
+<p>To solve the problem a more flexible description may be considered:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that generates the numbers from 1 to n.
 But for multiples of three gives “Fizz” instead of the
 number and for the multiples of five gives “Buzz”. For
@@ -62,7 +64,7 @@ numbers which are multiples of both three and five gives
 “FizzBuzz”.&quot;
 </pre></div>
 </div>
-<p>This gives a more flexible solution. To print the results one just needs to use the generator:</p>
+<p>This, in fact, leads to a more flexible solution. To print the results one just needs to use a generator (see <a class="reference internal" href="API/fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz" title="fizzbuzz_lib.classic_fizzbuzz"><code class="xref py py-func docutils literal notranslate"><span class="pre">classic_fizzbuzz()</span></code></a>):</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fizzbuzz_lib</span> <span class="kn">import</span> <span class="n">classic_fizzbuzz</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -78,18 +80,38 @@ numbers which are multiples of both three and five gives
 <span class="go">Buzz</span>
 </pre></div>
 </div>
-<p>This allows to store the solution in a container. For example, a list:</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
-<span class="go">[&#39;1&#39;, &#39;2&#39;, &#39;Fizz&#39;, &#39;4&#39;, &#39;Buzz&#39;, &#39;Fizz&#39;, &#39;7&#39;, &#39;8&#39;, &#39;Fizz&#39;, &#39;Buzz&#39;]</span>
+<p>This allows to store the solution in a container or to use it in a more lazy manner. For example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="s1">&#39;Buzz&#39;</span><span class="p">]</span>
+<span class="go">[&#39;1&#39;, &#39;2&#39;, &#39;Fizz&#39;, &#39;4&#39;, &#39;Fizz&#39;, &#39;7&#39;, &#39;8&#39;, &#39;Fizz&#39;]</span>
 </pre></div>
 </div>
-<p>A CLI script <cite>fizzbuzz_cli.py</cite> is available to execute this function from console [#1]:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fizzbuzz $&gt; ./fizzbuzz_cli <span class="m">10</span>
+<p>In <a class="reference internal" href="API/fizzbuzz_lib.html#module-fizzbuzz_lib" title="fizzbuzz_lib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fizzbuzz_lib</span></code></a> you may find some other useful functions.</p>
+</section>
+<section id="cli-script">
+<h2>CLI script<a class="headerlink" href="#cli-script" title="Permalink to this headline">¶</a></h2>
+<p>A CLI script <a class="footnote-reference brackets" href="#ftyper" id="id1">1</a> <code class="docutils literal notranslate"><span class="pre">fizzbuzz_cli.py</span></code> is available to execute this function from console <a class="footnote-reference brackets" href="#fn" id="id2">2</a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fizzbuzz $&gt; ./fizzbuzz_cli.py <span class="m">10</span>
 <span class="m">1</span> <span class="m">2</span> Fizz <span class="m">4</span> Buzz Fizz <span class="m">7</span> <span class="m">8</span> Fizz Buzz
 </pre></div>
 </div>
+<p>See <code class="docutils literal notranslate"><span class="pre">fizzbuzz_cli.py</span> <span class="pre">--help</span></code> for other options.</p>
+</section>
+<section id="web-services">
+<h2>Web services<a class="headerlink" href="#web-services" title="Permalink to this headline">¶</a></h2>
+<p>Web services <a class="footnote-reference brackets" href="#ffastapi" id="id3">3</a> may also be used to generate the FizzBuzz sequence. Just execute <cite>run_fastapi_server.sh</cite> and then open in a browser <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a> and a description of the available services will appear. You can also use <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a> to see the documentation in an alternative scheme.</p>
 <p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="ftyper"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>The CLI is written in <a class="reference external" href="https://typer.tiangolo.com">Typer</a>.</p>
+</dd>
+<dt class="label" id="fn"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>For the sake of simplicity the output is showed after the command, but in fact the output is opened in a new console stream!</p>
+</dd>
+<dt class="label" id="ffastapi"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>Web services are written in <a class="reference external" href="https://fastapi.tiangolo.com">FastAPI</a>.</p>
+</dd>
+</dl>
+</section>
 </section>
 
 
@@ -111,7 +133,12 @@ numbers which are multiples of both three and five gives
 <h3>Navigation</h3>
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Classic FizzBuzz</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classic FizzBuzz</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#changing-the-description">Changing the description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cli-script">CLI script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#web-services">Web services</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="API/fizzbuzz_lib.html">fizzbuzz_lib package</a></li>
 </ul>
 
