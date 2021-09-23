@@ -14,6 +14,8 @@ from constants import (CLASSIC_FIZZBUZZ_PREFIX, N_ARGS_NAME, SEP_ARGS_NAME,
 CLASSIC_FIZZBUZZ_COMMAND = 'cfb'
 CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND = 'cfbw'
 
+web_client = requests
+
 app = typer.Typer(
     help='Run FizzBuzz variants'
 )
@@ -53,7 +55,7 @@ def classic_fizzbuzz_from_web(
         url = urljoin(f'{baseurl}', f'/{CLASSIC_FIZZBUZZ_PREFIX}/{STREAM_PATH}')
     else:
         url = urljoin(f'{baseurl}', f'/{CLASSIC_FIZZBUZZ_PREFIX}/')
-    r = requests.get(url, params={N_ARGS_NAME: n, SEP_ARGS_NAME: sep}, stream=stream)
+    r = web_client.get(url, params={N_ARGS_NAME: n, SEP_ARGS_NAME: sep}, stream=stream)
     typer.echo_via_pager(str(s, r.encoding) for s in r.iter_content(chunk_size=127))
 
 
