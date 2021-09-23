@@ -74,6 +74,8 @@ Web services
 
 Web services [#fFastAPI]_ may also be used to generate the FizzBuzz sequence. Just execute `run_fastapi_server.sh` and then open in a browser http://localhost:8000/docs and a description of the available services will appear. You can also use http://localhost:8000/redoc to see the documentation in an alternative scheme.
 
+The CLI script has also options to act as a client to consume the web services. See ``fizzbuzz_cli.py cfbw --help`` for more details.
+
 .. rubric:: Footnotes
 
 .. [#fTyper] The CLI is written in `Typer <https://typer.tiangolo.com>`_.
