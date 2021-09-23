@@ -1,6 +1,9 @@
 import random
 import unittest
 
+import fastapi.testclient
+import fastapi_app
+import fizzbuzz_cli
 import typer.testing
 from fizzbuzz_cli import (CLASSIC_FIZZBUZZ_COMMAND,
                           CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND, app)
@@ -13,6 +16,7 @@ class TestCLI(unittest.TestCase):
         self._runner = typer.testing.CliRunner()
         self._seps = [' ', ', ', '; ']
         random.seed()
+        fizzbuzz_cli.web_client = fastapi.testclient.TestClient(fastapi_app.app)
 
     def test_cli_classic_fizzbuzz_fail(self):
         """Check CLI classic fizzbuzz fail when entering a wrong value
