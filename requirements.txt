@@ -1,3 +1,4 @@
 typer
 shellingham
 colorama
+fastapi[all]
