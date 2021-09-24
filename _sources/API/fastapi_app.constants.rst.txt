@@ -1,0 +1,7 @@
+fastapi\_app.constants module
+=============================
+
+.. automodule:: fastapi_app.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:

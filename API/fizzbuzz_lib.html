@@ -15,7 +15,8 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Classic FizzBuzz" href="../classic_fizzbuzz.html" />
+    <link rel="next" title="tests package" href="tests.html" />
+    <link rel="prev" title="fizzbuzz_cli module" href="fizzbuzz_cli.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -34,15 +35,16 @@
             
   <section id="module-fizzbuzz_lib">
 <span id="fizzbuzz-lib-package"></span><h1>fizzbuzz_lib package<a class="headerlink" href="#module-fizzbuzz_lib" title="Permalink to this headline">¶</a></h1>
+<p>This module contains util functions to generate the FizzBuzz sequence. These functions are used by :mod:~.`fizzbuzz_cli` and <a class="reference internal" href="fastapi_app.html#module-fastapi_app" title="fastapi_app"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastapi_app</span></code></a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.as_text">
-<span class="sig-prename descclassname"><span class="pre">fizzbuzz_lib.</span></span><span class="sig-name descname"><span class="pre">as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fizzbuzz_lib.as_text" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.as_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gives the content of <code class="docutils literal notranslate"><span class="pre">gen</span></code> as a text where each element is separated by <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.classic_fizzbuzz">
-<span class="sig-prename descclassname"><span class="pre">fizzbuzz_lib.</span></span><span class="sig-name descname"><span class="pre">classic_fizzbuzz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span> <span class="p"><span class="pre">|</span></span> <span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Generator</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span> <span class="p"><span class="pre">|</span></span> <span class="pre">str</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">,</span> </span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz" title="Permalink to this definition">¶</a></dt>
 <dd><p>The classic FizzBuzz.</p>
 <p>The problem description is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that generates the numbers from 1 to n.
@@ -72,19 +74,19 @@ numbers which are multiples of both three and five gives
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.classic_fizzbuzz_as_gen_text">
-<span class="sig-prename descclassname"><span class="pre">fizzbuzz_lib.</span></span><span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_gen_text" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gives classic FizzBuzz result as a generator of strings with suffix <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz_as_gen_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_gen_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives classic FizzBuzz sequence as a generator of strings with suffix <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.classic_fizzbuzz_as_text">
-<span class="sig-prename descclassname"><span class="pre">fizzbuzz_lib.</span></span><span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_text" title="Permalink to this definition">¶</a></dt>
-<dd><p>Gives classic FizzBuzz result as a text where each element is separated by <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz_as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gives classic FizzBuzz sequence as a text where each element is separated by <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.gen_text">
-<span class="sig-prename descclassname"><span class="pre">fizzbuzz_lib.</span></span><span class="sig-name descname"><span class="pre">gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#fizzbuzz_lib.gen_text" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#gen_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.gen_text" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gives the content of <code class="docutils literal notranslate"><span class="pre">gen</span></code> as a generator of strings with suffix <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
@@ -110,14 +112,23 @@ numbers which are multiples of both three and five gives
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../classic_fizzbuzz.html">Classic FizzBuzz</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">fizzbuzz_lib package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fizzbuzz</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.html">fastapi_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_cli.html">fizzbuzz_cli module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fizzbuzz_lib package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="../classic_fizzbuzz.html" title="previous chapter">Classic FizzBuzz</a></li>
+  <li><a href="modules.html">fizzbuzz</a><ul>
+      <li>Previous: <a href="fizzbuzz_cli.html" title="previous chapter">fizzbuzz_cli module</a></li>
+      <li>Next: <a href="tests.html" title="next chapter">tests package</a></li>
+  </ul></li>
   </ul></li>
 </ul>
 </div>

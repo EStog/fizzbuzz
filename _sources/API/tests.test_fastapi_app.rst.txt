@@ -1,0 +1,7 @@
+tests.test\_fastapi\_app module
+===============================
+
+.. automodule:: tests.test_fastapi_app
+   :members:
+   :undoc-members:
+   :show-inheritance:

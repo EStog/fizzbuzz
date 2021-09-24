@@ -1,0 +1,10 @@
+fizzbuzz
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   fastapi_app
+   fizzbuzz_cli
+   fizzbuzz_lib
+   tests

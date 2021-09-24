@@ -1,0 +1,16 @@
+tests package
+=============
+
+.. automodule:: tests
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 4
+
+   tests.test_fastapi_app
+   tests.test_fizzbuzz_cli

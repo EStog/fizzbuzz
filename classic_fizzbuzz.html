@@ -15,7 +15,7 @@
     <script src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="fizzbuzz_lib package" href="API/fizzbuzz_lib.html" />
+    <link rel="next" title="fizzbuzz" href="API/modules.html" />
     <link rel="prev" title="Welcome to FizzBuzz Brainstorm’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
@@ -43,8 +43,7 @@ numbers which are multiples of both three and five print
 “FizzBuzz”.&quot;
 </pre></div>
 </div>
-<p>The solution to the problem has been widely <a class="reference external" href="https://wiki.c2.com/?FizzBuzzTest">discussed</a>.
-One possible solution is the following:</p>
+<p>The solution to the problem has been widely <a class="reference external" href="https://wiki.c2.com/?FizzBuzzTest">discussed</a>. One possible solution is the following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">101</span><span class="p">):</span>
     <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
     <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -64,7 +63,7 @@ numbers which are multiples of both three and five gives
 “FizzBuzz”.&quot;
 </pre></div>
 </div>
-<p>This, in fact, leads to a more flexible solution. To print the results one just needs to use a generator (see <a class="reference internal" href="API/fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz" title="fizzbuzz_lib.classic_fizzbuzz"><code class="xref py py-func docutils literal notranslate"><span class="pre">classic_fizzbuzz()</span></code></a>):</p>
+<p>This, in fact, leads to a more flexible solution. To print the results one just needs to use a <a class="reference internal" href="API/fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz" title="fizzbuzz_lib.classic_fizzbuzz"><code class="xref py py-func docutils literal notranslate"><span class="pre">generator</span></code></a>:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">fizzbuzz_lib</span> <span class="kn">import</span> <span class="n">classic_fizzbuzz</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
@@ -98,7 +97,7 @@ numbers which are multiples of both three and five gives
 </section>
 <section id="web-services">
 <h2>Web services<a class="headerlink" href="#web-services" title="Permalink to this headline">¶</a></h2>
-<p>Web services <a class="footnote-reference brackets" href="#ffastapi" id="id3">3</a> may also be used to generate the FizzBuzz sequence. Just execute <cite>run_fastapi_server.sh</cite> and then open in a browser <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a> and a description of the available services will appear. You can also use <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a> to see the documentation in an alternative scheme.</p>
+<p>Web services <a class="footnote-reference brackets" href="#ffastapi" id="id3">3</a> may also be used to generate the FizzBuzz sequence. Just execute <code class="docutils literal notranslate"><span class="pre">run_fastapi_server.sh</span></code> and then open in a browser <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a>. A description of the available services will appear. You may also use <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a> to see the documentation in an alternative scheme.</p>
 <p>The CLI script has also options to act as a client to consume the web services. See <code class="docutils literal notranslate"><span class="pre">fizzbuzz_cli.py</span> <span class="pre">cfbw</span> <span class="pre">--help</span></code> for more details.</p>
 <p class="rubric">Footnotes</p>
 <dl class="footnote brackets">
@@ -140,7 +139,7 @@ numbers which are multiples of both three and five gives
 <li class="toctree-l2"><a class="reference internal" href="#web-services">Web services</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="API/fizzbuzz_lib.html">fizzbuzz_lib package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API/modules.html">fizzbuzz</a></li>
 </ul>
 
 <div class="relations">
@@ -148,7 +147,7 @@ numbers which are multiples of both three and five gives
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
       <li>Previous: <a href="index.html" title="previous chapter">Welcome to FizzBuzz Brainstorm’s documentation!</a></li>
-      <li>Next: <a href="API/fizzbuzz_lib.html" title="next chapter">fizzbuzz_lib package</a></li>
+      <li>Next: <a href="API/modules.html" title="next chapter">fizzbuzz</a></li>
   </ul></li>
 </ul>
 </div>

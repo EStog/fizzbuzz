@@ -1,0 +1,7 @@
+tests.test\_fizzbuzz\_cli module
+================================
+
+.. automodule:: tests.test_fizzbuzz_cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
