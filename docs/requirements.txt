@@ -1,4 +1,4 @@
--r ../requirements.txts
+-r ../requirements.txt
 
 sphinx>=4.0.0
 sphinxcontrib-apidoc
