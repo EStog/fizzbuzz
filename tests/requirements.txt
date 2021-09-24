@@ -1,4 +1,4 @@
--r ../requirements.txts
+-r ../requirements.txt
 
 pytest
 sphinx>=4.0.0
