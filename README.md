@@ -2,16 +2,26 @@
 
 # FizzBuzz brainstorm!
 
-[FizzBuzz](https://wiki.c2.com/?FizzBuzzTest) is a simple test used in programming interviews.
+[FizzBuzz](https://wiki.c2.com/?FizzBuzzTest) is a simple test used in programming interviews. Pleasing the friends from [cuban.engineer](https://cuban.engineer/), this repository is just a personal brainstorming on the subject. You can see the [project documentation](https://estog.github.io/fizzbuzz) for more details.
 
-Pleasing the friends from [cuban.engineer](https://cuban.engineer/), this repository is just a personal brainstorming on the subject.
+To use any part of the project first run in project root directory:
 
-You can see the [project documentation](https://estog.github.io/fizzbuzz) for more details.
+```shell
+$> pip install -r ./requirements.txt
+```
 
-In case you need to generate offline html documentation just run `build_docs.sh html`.
+In case you need to generate offline HTML documentation just run in project root directory:
 
-To see other available formats run just `build_docs.sh`.
+```shell
+$> pip install -r ./docs/requirements.txt
+$> ./build_docs.sh html
+```
 
-Documentation is generated using Sphinx. See [sphinx documentation](https://www.sphinx-doc.org/) for more details.
+To see other available formats run `./build_docs.sh`. Documentation is built using [Sphinx](https://www.sphinx-doc.org/).
 
-In case you want to run the tests, execute `run_tests.sh`.
+In case you want to run the tests, execute in project root directory:
+
+```shell
+$> pip install -r ./tests/requirements.txt
+$> ./run_tests.sh
+```

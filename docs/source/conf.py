@@ -36,6 +36,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.doctest',
     'sphinx.ext.githubpages',
+    'sphinx.ext.viewcode',
     'sphinxcontrib.apidoc',
 ]
 
@@ -61,10 +62,16 @@ html_theme = 'alabaster'
 html_static_path = ['_static']
 
 
+add_module_names = False
+python_use_unqualified_type_names = True
+autoclass_content = 'both'
+
+# sphinx.ext.autodoc options
+autodoc_member_order = 'groupwise'
+
 # sphinxcontrib-apidoc options
-apidoc_module_dir = '../../fizzbuzz_lib'
+apidoc_module_dir = '../../'
 apidoc_output_dir = './API'
 apidoc_separate_modules = True
-apidoc_toc_file = False
 apidoc_module_first = True
 apidoc_extra_args = ['-f']

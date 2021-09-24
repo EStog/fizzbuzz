@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+"""This is a CLI to the functions defined in :mod:`~.fizzbuzz_lib` and the web services provided by :mod:`~.fastapi_app`. Use option ``--help`` to see available commands.
+"""
+from __future__ import annotations
+
 from urllib.parse import urljoin
 
 import fizzbuzz_lib
@@ -15,17 +19,17 @@ CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND = 'cfbw'
 web_client = requests
 
 app = typer.Typer(
-    help='Run FizzBuzz variants'
+    help='Run FizzBuzz!'
 )
 
 n_arg = typer.Argument(..., help='The maximum number of the sequence')
 sep_arg = typer.Option(
-    ' ', help='A separator of each element. A trailing separator will always remain.',
+    ' ', help='The separator of each element. A trailing separator will always remain.',
     show_default='SPACE')
 
 
 @app.command(name=CLASSIC_FIZZBUZZ_COMMAND)
-def classic_fizzbuzz(n: int = n_arg, sep: str = sep_arg):
+def classic_fizzbuzz_command(n: int = n_arg, sep: str = sep_arg):
     """Run the classsic FizzBuzz
     """
     typer.echo_via_pager(fizzbuzz_lib.classic_fizzbuzz_as_gen_text(n, sep))
@@ -39,7 +43,7 @@ def get_baseurl(value: str):
 
 
 @app.command(name=CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND)
-def classic_fizzbuzz_from_web(
+def classic_fizzbuzz_from_web_command(
     n: int = n_arg, sep: str = sep_arg,
     baseurl: str = typer.Option(
         'localhost:8000',

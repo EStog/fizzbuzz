@@ -1,3 +1,6 @@
+"""Tests for :mod:`~.fizzbuzz_cli`
+"""
+
 import random
 import unittest
 
@@ -11,6 +14,8 @@ from fizzbuzz_lib import classic_fizzbuzz_as_text
 
 
 class TestCLI(unittest.TestCase):
+    """Unittest class to test :mod:`~.fizzbuzz_cli`
+    """
 
     def setUp(self) -> None:
         self._runner = typer.testing.CliRunner()
@@ -19,7 +24,7 @@ class TestCLI(unittest.TestCase):
         fizzbuzz_cli.web_client = fastapi.testclient.TestClient(fastapi_app.app)
 
     def test_cli_classic_fizzbuzz_fail(self):
-        """Check CLI classic fizzbuzz fail when entering a wrong value
+        """Checks that CLI classic-fizzbuzz command fails when entering a wrong value
         """
         r = self._runner.invoke(app, [CLASSIC_FIZZBUZZ_COMMAND, 'wwe'])
         self.assertNotEqual(r.exit_code, 0)
@@ -36,13 +41,13 @@ class TestCLI(unittest.TestCase):
         self.assertEqual(r.stdout, patron)
 
     def test_classic_fizzbuzz(self):
-        """Tests classic fizzbuzz command
+        """Tests classic-fizzbuzz command
         """
         for options, patron in self._options():
             self._test_run(CLASSIC_FIZZBUZZ_COMMAND, options, patron)
 
     def test_classic_fizzbuzz_web(self):
-        """Tests classic fizzbuzz from web command
+        """Tests classic-fizzbuzz-from-web command
         """
         for options, patron in self._options():
             self._test_run(CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND,

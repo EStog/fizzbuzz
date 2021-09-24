@@ -9,8 +9,7 @@ The classic FizzBuzz problem `description <https://wiki.c2.com/?FizzBuzzTest>`_ 
     numbers which are multiples of both three and five print
     “FizzBuzz”."
 
-The solution to the problem has been widely `discussed <https://wiki.c2.com/?FizzBuzzTest>`_.
-One possible solution is the following:
+The solution to the problem has been widely `discussed <https://wiki.c2.com/?FizzBuzzTest>`_. One possible solution is the following:
 
 .. code-block:: python
 
@@ -34,7 +33,7 @@ To solve the problem a more flexible description may be considered::
       numbers which are multiples of both three and five gives
       “FizzBuzz”."
 
-This, in fact, leads to a more flexible solution. To print the results one just needs to use a generator (see :func:`~.classic_fizzbuzz`):
+This, in fact, leads to a more flexible solution. To print the results one just needs to use a :func:`generator <fizzbuzz_lib.classic_fizzbuzz>`:
 
 >>> from fizzbuzz_lib import classic_fizzbuzz
 >>> for i in classic_fizzbuzz(10):
@@ -72,7 +71,7 @@ See ``fizzbuzz_cli.py --help`` for other options.
 Web services
 ------------
 
-Web services [#fFastAPI]_ may also be used to generate the FizzBuzz sequence. Just execute `run_fastapi_server.sh` and then open in a browser http://localhost:8000/docs and a description of the available services will appear. You can also use http://localhost:8000/redoc to see the documentation in an alternative scheme.
+Web services [#fFastAPI]_ may also be used to generate the FizzBuzz sequence. Just execute ``run_fastapi_server.sh`` and then open in a browser http://localhost:8000/docs. A description of the available services will appear. You may also use http://localhost:8000/redoc to see the documentation in an alternative scheme.
 
 The CLI script has also options to act as a client to consume the web services. See ``fizzbuzz_cli.py cfbw --help`` for more details.
 
