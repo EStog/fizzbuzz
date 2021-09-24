@@ -35,10 +35,10 @@
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
 
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">Iterator</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Iterator</span>
 
 
-<div class="viewcode-block" id="classic_fizzbuzz"><a class="viewcode-back" href="../API/fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz">[docs]</a><span class="k">def</span> <span class="nf">classic_fizzbuzz</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Generator</span><span class="p">[</span><span class="nb">int</span> <span class="o">|</span> <span class="nb">str</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
+<div class="viewcode-block" id="classic_fizzbuzz"><a class="viewcode-back" href="../API/fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz">[docs]</a><span class="k">def</span> <span class="nf">classic_fizzbuzz</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
     <span class="sd">&quot;&quot;&quot;The classic FizzBuzz.</span>
 
 <span class="sd">    The problem description is::</span>
@@ -77,9 +77,7 @@
             <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;Fizz&#39;</span>
         <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">s</span> <span class="o">+=</span> <span class="s1">&#39;Buzz&#39;</span>
-        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
-            <span class="n">s</span> <span class="o">+=</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="k">yield</span> <span class="n">s</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">else</span> <span class="n">i</span></div>
+        <span class="k">yield</span> <span class="n">s</span> <span class="k">if</span> <span class="n">s</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="gen_text"><a class="viewcode-back" href="../API/fizzbuzz_lib.html#fizzbuzz_lib.gen_text">[docs]</a><span class="k">def</span> <span class="nf">gen_text</span><span class="p">(</span><span class="n">gen</span><span class="p">:</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">sep</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>

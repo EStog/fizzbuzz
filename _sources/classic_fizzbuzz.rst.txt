@@ -14,12 +14,12 @@ The solution to the problem has been widely `discussed <https://wiki.c2.com/?Fiz
 .. code-block:: python
 
     for i in range(0,101):
-        s = ""
+        s = ''
         if i % 3 == 0:
-            s += "Fizz"
+            s += 'Fizz'
         if i % 5 == 0:
-            s += "Buzz"
-        print(s) if len(s) else i
+            s += 'Buzz'
+        print(s) if s else i
 
 
 Changing the description
