@@ -2,10 +2,10 @@
 """
 from __future__ import annotations
 
-from typing import Generator, Iterator
+from typing import Iterator
 
 
-def classic_fizzbuzz(n: int) -> Generator[int | str, None, None]:
+def classic_fizzbuzz(n: int) -> Iterator[str]:
     """The classic FizzBuzz.
 
     The problem description is::
@@ -44,9 +44,7 @@ def classic_fizzbuzz(n: int) -> Generator[int | str, None, None]:
             s += 'Fizz'
         if i % 5 == 0:
             s += 'Buzz'
-        if s == '':
-            s += str(i)
-        yield s if len(s) else i
+        yield s if s else str(i)
 
 
 def gen_text(gen: Iterator, sep: str):
