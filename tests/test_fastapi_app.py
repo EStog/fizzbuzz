@@ -1,3 +1,6 @@
+"""Tests for :mod:`~.fastapi_app`
+"""
+
 import random
 import unittest
 
@@ -9,13 +12,14 @@ from fizzbuzz_lib import classic_fizzbuzz_as_text
 
 
 class TestFastAPIApp(unittest.TestCase):
+    """Unittest class to test :mod:`~.fastapi_app`"""
 
     def setUp(self) -> None:
         self._seps = [' ', ', ', '; ']
         random.seed()
 
     def test_classic_fizzbuzz(self):
-        """Tests single response of classic fizzbuzz
+        """Tests classic FizzBuzz web services
         """
         with TestClient(app) as client:
             for i in range(100):

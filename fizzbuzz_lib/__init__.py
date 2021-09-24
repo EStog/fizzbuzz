@@ -1,3 +1,5 @@
+"""This module contains util functions to generate the FizzBuzz sequence. These functions are used by :mod:~.`fizzbuzz_cli` and :mod:`~.fastapi_app`.
+"""
 from __future__ import annotations
 
 from typing import Generator, Iterator
@@ -61,10 +63,10 @@ def as_text(gen: Iterator, sep: str):
 
 
 def classic_fizzbuzz_as_text(n: int, sep: str):
-    """Gives classic FizzBuzz result as a text where each element is separated by ``sep``"""
+    """Gives classic FizzBuzz sequence as a text where each element is separated by ``sep``"""
     return as_text(classic_fizzbuzz(n), sep)
 
 
 def classic_fizzbuzz_as_gen_text(n: int, sep: str):
-    """Gives classic FizzBuzz result as a generator of strings with suffix ``sep``"""
+    """Gives classic FizzBuzz sequence as a generator of strings with suffix ``sep``"""
     return gen_text(classic_fizzbuzz(n), sep)
