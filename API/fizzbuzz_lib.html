@@ -1,50 +1,92 @@
-
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
-    <title>fizzbuzz_lib package &#8212; FizzBuzz Brainstorm dev documentation</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fizzbuzz_lib package &mdash; FizzBuzz Brainstorm 0.2-dev documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="tests package" href="tests.html" />
-    <link rel="prev" title="fizzbuzz_cli module" href="fizzbuzz_cli.html" />
-   
-  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="fizzbuzz_cli module" href="fizzbuzz_cli.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> FizzBuzz Brainstorm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../classic_fizzbuzz.html">Classic FizzBuzz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../generalized_fizzbuzz.html">Generalized FizzBuzz</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fizzbuzz</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.html">fastapi_app package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_cli.html">fizzbuzz_cli module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fizzbuzz_lib package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
+</ul>
+</li>
+</ul>
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+        </div>
+      </div>
+    </nav>
 
-          <div class="body" role="main">
-            
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">FizzBuzz Brainstorm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">fizzbuzz</a> &raquo;</li>
+      <li>fizzbuzz_lib package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/API/fizzbuzz_lib.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="module-fizzbuzz_lib">
-<span id="fizzbuzz-lib-package"></span><h1>fizzbuzz_lib package<a class="headerlink" href="#module-fizzbuzz_lib" title="Permalink to this headline">¶</a></h1>
+<span id="fizzbuzz-lib-package"></span><h1>fizzbuzz_lib package<a class="headerlink" href="#module-fizzbuzz_lib" title="Permalink to this headline"></a></h1>
 <p>This module contains util functions to generate the FizzBuzz sequence. These functions are used by :mod:~.`fizzbuzz_cli` and <a class="reference internal" href="fastapi_app.html#module-fastapi_app" title="fastapi_app"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastapi_app</span></code></a>.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.as_text">
-<span class="sig-name descname"><span class="pre">as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.as_text" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.as_text" title="Permalink to this definition"></a></dt>
 <dd><p>Gives the content of <code class="docutils literal notranslate"><span class="pre">gen</span></code> as a text where each element is separated by <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.classic_fizzbuzz">
-<span class="sig-name descname"><span class="pre">classic_fizzbuzz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz" title="Permalink to this definition"></a></dt>
 <dd><p>The classic FizzBuzz.</p>
 <p>The problem description is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that generates the numbers from 1 to n.
@@ -74,100 +116,104 @@ numbers which are multiples of both three and five gives
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.classic_fizzbuzz_as_gen_text">
-<span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz_as_gen_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_gen_text" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz_as_gen_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_gen_text" title="Permalink to this definition"></a></dt>
 <dd><p>Gives classic FizzBuzz sequence as a generator of strings with suffix <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.classic_fizzbuzz_as_text">
-<span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz_as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_text" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz_as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#classic_fizzbuzz_as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.classic_fizzbuzz_as_text" title="Permalink to this definition"></a></dt>
 <dd><p>Gives classic FizzBuzz sequence as a text where each element is separated by <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_lib.gen_text">
-<span class="sig-name descname"><span class="pre">gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#gen_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.gen_text" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">gen_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gen</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#gen_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.gen_text" title="Permalink to this definition"></a></dt>
 <dd><p>Gives the content of <code class="docutils literal notranslate"><span class="pre">gen</span></code> as a generator of strings with suffix <code class="docutils literal notranslate"><span class="pre">sep</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="fizzbuzz_lib.general_fizzbuzz">
+<span class="sig-name descname"><span class="pre">general_fizzbuzz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">_E</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mapping</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_E</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_E</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">_RE</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_E</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">_AC</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fusion</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_AC</span><span class="p"><span class="pre">,</span> </span><span class="pre">_RE</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">_AC</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">common</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">_AC</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span> </span><span class="pre">_R</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><span class="pre">_R</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="../_modules/fizzbuzz_lib.html#general_fizzbuzz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_lib.general_fizzbuzz" title="Permalink to this definition"></a></dt>
+<dd><div class="versionadded">
+<p><span class="versionmodified added">New in version 0.2.</span></p>
+</div>
+<p>This function is to solve a parameterized version of the FizzBuzz problem.
+Instead of receiving just the stop of the sequence, this function receives an <code class="docutils literal notranslate"><span class="pre">iterable</span></code>, a <code class="docutils literal notranslate"><span class="pre">mapping</span></code> from conditions to replacements functions, a <code class="docutils literal notranslate"><span class="pre">default</span></code> function that gives a replacement value for the element in question if it does not fulfill any condition, a <code class="docutils literal notranslate"><span class="pre">fusion</span></code> function that, for each element, merges in an accumulative manner all the applicable replacements into one, and a <code class="docutils literal notranslate"><span class="pre">common</span></code> transformation that is applied to each resultant replacement from the <code class="docutils literal notranslate"><span class="pre">fusion</span></code> phase.</p>
+<p>For example:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mod3</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mod5</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="n">e</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mapping</span><span class="o">=</span><span class="p">{</span><span class="n">mod3</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="s1">&#39;Fizz&#39;</span><span class="p">,</span> <span class="n">mod5</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="s1">&#39;Buzz&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fusion</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">ac</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">ac</span><span class="o">+</span><span class="n">r</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">classic_fizzbuzz</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">general_fizzbuzz</span><span class="p">(</span>
+<span class="gp">... </span>                                               <span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">),</span>
+<span class="gp">... </span>                                               <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">,</span>
+<span class="gp">... </span>                                               <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">fusion</span><span class="o">=</span><span class="n">fusion</span><span class="p">,</span>
+<span class="gp">... </span>                                               <span class="n">common</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span>          <span class="p">))</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">assert</span> <span class="n">classic_fizzbuzz_as_text</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;, &#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">general_fizzbuzz</span><span class="p">(</span>
+<span class="gp">... </span>                                                          <span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">),</span>
+<span class="gp">... </span>                                                          <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">,</span>
+<span class="gp">... </span>                                                          <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span> <span class="n">fusion</span><span class="o">=</span><span class="n">fusion</span><span class="p">,</span>
+<span class="gp">... </span>                                                          <span class="n">common</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s1">, &#39;</span>   <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span>  <span class="n">general_fizzbuzz</span><span class="p">(</span>  <span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">61</span><span class="p">),</span>
+<span class="gp">... </span>                          <span class="n">mapping</span><span class="o">=</span><span class="p">{</span> <span class="n">mod3</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="s1">&#39;Fuzzy&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                                    <span class="n">mod5</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="s1">&#39;Buzzy&#39;</span>  <span class="p">},</span>
+<span class="gp">... </span>                          <span class="n">default</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;Normal&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">fusion</span><span class="o">=</span><span class="n">fusion</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">common</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;(</span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s1">)&#39;</span>              <span class="p">)</span>  <span class="p">)</span>
+<span class="go">[&#39;(Buzzy)&#39;, &#39;(Normal)&#39;, &#39;(Fuzzy)&#39;, &#39;(Normal)&#39;, &#39;(Normal)&#39;, &#39;(FuzzyBuzzy)&#39;]</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span>  <span class="n">general_fizzbuzz</span><span class="p">(</span>  <span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">55</span><span class="p">,</span> <span class="mi">61</span><span class="p">),</span>
+<span class="gp">... </span>                          <span class="n">mapping</span><span class="o">=</span><span class="p">{</span> <span class="n">mod3</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s1">&#39;Fuzzy&#39;</span><span class="p">),</span>
+<span class="gp">... </span>                                    <span class="n">mod5</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="p">(</span><span class="n">e</span><span class="p">,</span> <span class="s1">&#39;Buzzy&#39;</span><span class="p">)</span>  <span class="p">},</span>
+<span class="gp">... </span>                          <span class="n">default</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;Normal&#39;</span><span class="p">,</span>
+<span class="gp">... </span>                          <span class="n">fusion</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ac</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="n">ac</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ac</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+<span class="gp">... </span>                          <span class="n">common</span><span class="o">=</span><span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="n">r</span>                          <span class="p">)</span>  <span class="p">)</span>
+<span class="go">[(55, &#39;Buzzy&#39;), &#39;Normal&#39;, (57, &#39;Fuzzy&#39;), &#39;Normal&#39;, &#39;Normal&#39;, (60, &#39;FuzzyBuzzy&#39;)]</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Take into account that this function does not validates if two conditions in the mapping are equivalent.</p>
+</div>
 </dd></dl>
 
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fizzbuzz_cli.html" class="btn btn-neutral float-left" title="fizzbuzz_cli module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tests.html" class="btn btn-neutral float-right" title="tests package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Ernesto Soto Gómez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="../index.html">FizzBuzz Brainstorm</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../classic_fizzbuzz.html">Classic FizzBuzz</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">fizzbuzz</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="fastapi_app.html">fastapi_app package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_cli.html">fizzbuzz_cli module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">fizzbuzz_lib package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
-</ul>
-</li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="../index.html">Documentation overview</a><ul>
-  <li><a href="modules.html">fizzbuzz</a><ul>
-      <li>Previous: <a href="fizzbuzz_cli.html" title="previous chapter">fizzbuzz_cli module</a></li>
-      <li>Next: <a href="tests.html" title="next chapter">tests package</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>$('#searchbox').show(0);</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2021, Ernesto Soto Gómez.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="../_sources/API/fizzbuzz_lib.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generalized FizzBuzz &mdash; FizzBuzz Brainstorm 0.2-dev documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="fizzbuzz" href="API/modules.html" />
+    <link rel="prev" title="Classic FizzBuzz" href="classic_fizzbuzz.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> FizzBuzz Brainstorm
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="classic_fizzbuzz.html">Classic FizzBuzz</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generalized FizzBuzz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API/modules.html">fizzbuzz</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FizzBuzz Brainstorm</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Generalized FizzBuzz</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/generalized_fizzbuzz.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="generalized-fizzbuzz">
+<h1>Generalized FizzBuzz<a class="headerlink" href="#generalized-fizzbuzz" title="Permalink to this headline"></a></h1>
+<p>FizzBuzz may be generalized to use an arbitrary amount of conditions with its respective replacements. Furthermore, the resultant sequence may be normalized in manner that each element shows a common trait <a class="footnote-reference brackets" href="#f1" id="id1">1</a>.</p>
+<p><a class="reference internal" href="API/fizzbuzz_lib.html#fizzbuzz_lib.general_fizzbuzz" title="fizzbuzz_lib.general_fizzbuzz"><code class="xref py py-func docutils literal notranslate"><span class="pre">general_fizzbuzz()</span></code></a> is an alternative implementation of this generalized FizzBuzz.
+For example, consider the following case. We have the numbers from 95 to 115, and we want to replace all numbers by a tuple with shape <code class="docutils literal notranslate"><span class="pre">(number,</span> <span class="pre">string)</span></code>, where <code class="docutils literal notranslate"><span class="pre">number</span></code> is the current number and <code class="docutils literal notranslate"><span class="pre">string</span></code> is (checked in that order):</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Palindromic&quot;</span></code> if the number is <a class="reference external" href="https://en.wikipedia.org/wiki/Palindromic_number">palindromic</a>,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;Even&quot;</span></code> if it has an even number of digits.</p></li>
+</ul>
+</div></blockquote>
+<p>First let define a simple function to know if a number is palindromic:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindromic</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Let then define our mapping from conditions to replacements:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">is_palindromic</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Palindromic&#39;</span><span class="p">),</span>
+           <span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Even&#39;</span><span class="p">)}</span>
+</pre></div>
+</div>
+<p>Then, we use <a class="reference internal" href="API/fizzbuzz_lib.html#fizzbuzz_lib.general_fizzbuzz" title="fizzbuzz_lib.general_fizzbuzz"><code class="xref py py-func docutils literal notranslate"><span class="pre">general_fizzbuzz()</span></code></a> to obtain our list:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fizzbuzz_lib</span> <span class="kn">import</span> <span class="n">general_fizzbuzz</span>
+
+<span class="n">it</span> <span class="o">=</span> <span class="n">general_fizzbuzz</span><span class="p">(</span><span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">116</span><span class="p">),</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">,</span>
+                      <span class="n">default</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">fusion</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ac</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="n">ac</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ac</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>
+                      <span class="n">common</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">it</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This would output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[(95, &#39;Even&#39;), (96, &#39;Even&#39;), (97, &#39;Even&#39;), (98, &#39;Even&#39;), (99, &#39;PalindromicEven&#39;), 100, (101, &#39;Palindromic&#39;), 102, 103, 104, 105, 106, 107, 108, 109, 110, (111, &#39;Palindromic&#39;), 112, 113, 114, 115]
+</pre></div>
+</div>
+<p class="rubric">Footnotes</p>
+<dl class="footnote brackets">
+<dt class="label" id="f1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Of course, we may generalize even further to the point of seeing FizzBuzz as a <a class="reference external" href="https://en.wikipedia.org/wiki/Map_(higher-order_function)">map</a> function, but we will not reach that point here because we will be discussing a widely known function and that will just take away all the fun 😉.</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="classic_fizzbuzz.html" class="btn btn-neutral float-left" title="Classic FizzBuzz" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="API/modules.html" class="btn btn-neutral float-right" title="fizzbuzz" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Ernesto Soto Gómez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
