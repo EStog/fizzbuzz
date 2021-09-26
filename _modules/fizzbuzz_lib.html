@@ -154,7 +154,8 @@
 <span class="sd">                     default: Callable[[_E], _AC], \</span>
 <span class="sd">                     fusion: Callable[[_AC, _RE], _AC], \</span>
 <span class="sd">                     common: Callable[[_AC], _R]) -&gt; Iterator[_R]</span>
-<span class="sd">    .. versionadded:: 0.2</span>
+
+<span class="sd">    .. versionadded:: 0.2.0</span>
 
 <span class="sd">    This function is to solve a parameterized version of the FizzBuzz problem.</span>
 <span class="sd">    Instead of receiving just the stop of the sequence, this function receives an ``iterable``, a ``mapping`` from conditions to replacements functions, a ``default`` function that gives a replacement value for the element in question if it does not fulfill any condition, a ``fusion`` function that, for each element, merges in an accumulative manner all the applicable replacements into one, and a ``common`` transformation that is applied to each resultant replacement from the ``fusion`` phase.</span>
