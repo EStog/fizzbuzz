@@ -2,3 +2,5 @@
 
 sphinx>=4.0.0
 sphinxcontrib-apidoc
+sphinx_rtd_theme
+sphinxemoji

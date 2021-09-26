@@ -36,6 +36,7 @@ In case you want to run the tests, execute in project root directory:
    :caption: Contents:
 
    classic_fizzbuzz
+   generalized_fizzbuzz
    API/modules
 
 Indices and tables
