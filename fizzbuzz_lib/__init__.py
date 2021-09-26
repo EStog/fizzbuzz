@@ -1,9 +1,10 @@
 """This module contains util functions to generate the FizzBuzz sequence. These functions are used by :mod:~.`fizzbuzz_cli` and :mod:`~.fastapi_app`.
 """
 from __future__ import annotations
+from functools import reduce
 
-from typing import Iterator
-
+from typing import Callable, Iterator, TypeVar
+from collections.abc import Mapping, Iterable
 
 def classic_fizzbuzz(n: int) -> Iterator[str]:
     """The classic FizzBuzz.
@@ -68,3 +69,78 @@ def classic_fizzbuzz_as_text(n: int, sep: str):
 def classic_fizzbuzz_as_gen_text(n: int, sep: str):
     """Gives classic FizzBuzz sequence as a generator of strings with suffix ``sep``"""
     return gen_text(classic_fizzbuzz(n), sep)
+
+
+_E = TypeVar('_E')
+_RE = TypeVar('_RE')
+_AC= TypeVar('_AC')
+_R = TypeVar('_R')
+
+def general_fizzbuzz(iterable: Iterable[_E],
+                     mapping: Mapping[Callable[[_E], bool], Callable[[_E], _RE]],
+                     default: Callable[[_E], _AC],
+                     fusion: Callable[[_AC, _RE], _AC],
+                     common: Callable[[_AC], _R]) -> Iterator[_R]:
+    """general_fizzbuzz(iterable: Iterable[_E], \
+                     mapping: Mapping[Callable[[_E], bool], Callable[[_E], _RE]], \
+                     default: Callable[[_E], _AC], \
+                     fusion: Callable[[_AC, _RE], _AC], \
+                     common: Callable[[_AC], _R]) -> Iterator[_R]
+    .. versionadded:: 0.2
+
+    This function is to solve a parameterized version of the FizzBuzz problem.
+    Instead of receiving just the stop of the sequence, this function receives an ``iterable``, a ``mapping`` from conditions to replacements functions, a ``default`` function that gives a replacement value for the element in question if it does not fulfill any condition, a ``fusion`` function that, for each element, merges in an accumulative manner all the applicable replacements into one, and a ``common`` transformation that is applied to each resultant replacement from the ``fusion`` phase.
+
+    For example:
+
+    .. testsetup ::
+
+       from fizzbuzz_lib import classic_fizzbuzz, classic_fizzbuzz_as_text, general_fizzbuzz
+
+    >>> mod3 = lambda e: e % 3 == 0
+    >>> mod5 = lambda e: e % 5 == 0
+    >>> mapping={mod3: lambda e: 'Fizz', mod5: lambda e: 'Buzz'}
+    >>> fusion = lambda ac, r: ac+r
+    >>> assert list(classic_fizzbuzz(100)) == list(general_fizzbuzz(
+    ...                                                iterable=range(1, 101),
+    ...                                                mapping=mapping,
+    ...                                                default=str, fusion=fusion,
+    ...                                                common=lambda r: r          ))
+
+    >>> assert classic_fizzbuzz_as_text(100, ', ') == ''.join(general_fizzbuzz(
+    ...                                                           iterable=range(1, 101),
+    ...                                                           mapping=mapping,
+    ...                                                           default=str, fusion=fusion,
+    ...                                                           common=lambda r: f'{r}, '   ) )
+
+    >>> list(  general_fizzbuzz(  iterable=range(55, 61),
+    ...                           mapping={ mod3: lambda e: 'Fuzzy',
+    ...                                     mod5: lambda e: 'Buzzy'  },
+    ...                           default=lambda x: 'Normal',
+    ...                           fusion=fusion,
+    ...                           common=lambda r: f'({r})'              )  )
+    ['(Buzzy)', '(Normal)', '(Fuzzy)', '(Normal)', '(Normal)', '(FuzzyBuzzy)']
+
+    >>> list(  general_fizzbuzz(  iterable=range(55, 61),
+    ...                           mapping={ mod3: lambda e: (e, 'Fuzzy'),
+    ...                                     mod5: lambda e: (e, 'Buzzy')  },
+    ...                           default=lambda x: 'Normal',
+    ...                           fusion=lambda ac, r: (ac[0], ac[1]+r[1]),
+    ...                           common=lambda r: r                          )  )
+    [(55, 'Buzzy'), 'Normal', (57, 'Fuzzy'), 'Normal', 'Normal', (60, 'FuzzyBuzzy')]
+
+    .. caution::
+
+       Take into account that this function does not validates if two conditions in the mapping are equivalent.
+
+
+    """
+    for e in iterable:
+        it = (cond for cond in mapping if cond(e))
+        try:
+            ac = mapping[next(it)](e)
+        except StopIteration:
+            ac = default(e)
+        else:
+            ac = reduce(lambda ac, cond: fusion(ac, mapping[cond](e)), it, ac)
+        yield common(ac)
