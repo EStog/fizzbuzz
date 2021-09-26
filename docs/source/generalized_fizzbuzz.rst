@@ -1,6 +1,8 @@
 Generalized FizzBuzz
 ====================
 
+.. versionadded:: 0.2.0
+
 FizzBuzz may be generalized to use an arbitrary amount of conditions with its respective replacements. Furthermore, the resultant sequence may be normalized in manner that each element shows a common trait [#f1]_.
 
 :func:`~.general_fizzbuzz` is an alternative implementation of this generalized FizzBuzz.

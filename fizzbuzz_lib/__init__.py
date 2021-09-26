@@ -86,7 +86,8 @@ def general_fizzbuzz(iterable: Iterable[_E],
                      default: Callable[[_E], _AC], \
                      fusion: Callable[[_AC, _RE], _AC], \
                      common: Callable[[_AC], _R]) -> Iterator[_R]
-    .. versionadded:: 0.2
+
+    .. versionadded:: 0.2.0
 
     This function is to solve a parameterized version of the FizzBuzz problem.
     Instead of receiving just the stop of the sequence, this function receives an ``iterable``, a ``mapping`` from conditions to replacements functions, a ``default`` function that gives a replacement value for the element in question if it does not fulfill any condition, a ``fusion`` function that, for each element, merges in an accumulative manner all the applicable replacements into one, and a ``common`` transformation that is applied to each resultant replacement from the ``fusion`` phase.
