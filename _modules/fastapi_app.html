@@ -38,7 +38,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../classic_fizzbuzz.html">Classic FizzBuzz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../generalized_fizzbuzz.html">Generalized FizzBuzz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../API/modules.html">fizzbuzz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../API/modules.html">Module docs</a></li>
 </ul>
 
         </div>
@@ -106,8 +106,11 @@
 <span class="k">async</span> <span class="k">def</span> <span class="nf">get_classic_fizzbuzz_as_stream</span><span class="p">(</span><span class="n">params</span><span class="p">:</span> <span class="n">_ClassicFizzBuzzParams</span> <span class="o">=</span> <span class="n">Depends</span><span class="p">()):</span>
     <span class="sd">&quot;&quot;&quot;Gives classic FizzBuzz result as a stream</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">StreamingResponse</span><span class="p">(</span><span class="n">classic_fizzbuzz_as_gen_text</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">.</span><span class="n">sep</span><span class="p">),</span>
-                             <span class="n">media_type</span><span class="o">=</span><span class="s1">&#39;text/plain&#39;</span><span class="p">)</span></div>
+    <span class="k">async</span> <span class="k">def</span> <span class="nf">f</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">classic_fizzbuzz_as_gen_text</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">params</span><span class="o">.</span><span class="n">sep</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">x</span>
+
+    <span class="k">return</span> <span class="n">StreamingResponse</span><span class="p">(</span><span class="n">f</span><span class="p">(),</span> <span class="n">media_type</span><span class="o">=</span><span class="s1">&#39;text/plain&#39;</span><span class="p">)</span></div>
 </pre></div>
 
            </div>

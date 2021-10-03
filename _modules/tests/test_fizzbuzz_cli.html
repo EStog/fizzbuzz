@@ -38,7 +38,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../classic_fizzbuzz.html">Classic FizzBuzz</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../generalized_fizzbuzz.html">Generalized FizzBuzz</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../API/modules.html">fizzbuzz</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../API/modules.html">Module docs</a></li>
 </ul>
 
         </div>
@@ -75,6 +75,7 @@
 <span class="kn">import</span> <span class="nn">fastapi.testclient</span>
 <span class="kn">import</span> <span class="nn">fastapi_app</span>
 <span class="kn">import</span> <span class="nn">fizzbuzz_cli</span>
+<span class="kn">import</span> <span class="nn">typer</span>
 <span class="kn">import</span> <span class="nn">typer.testing</span>
 <span class="kn">from</span> <span class="nn">fizzbuzz_cli</span> <span class="kn">import</span> <span class="p">(</span><span class="n">CLASSIC_FIZZBUZZ_COMMAND</span><span class="p">,</span>
                           <span class="n">CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND</span><span class="p">,</span> <span class="n">app</span><span class="p">)</span>
@@ -103,10 +104,15 @@
                 <span class="n">sep</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_seps</span><span class="p">)</span>
                 <span class="k">yield</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="s1">&#39;--sep&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="p">],</span> <span class="n">classic_fizzbuzz_as_text</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">sep</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
 
-    <span class="k">def</span> <span class="nf">_test_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">patron</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">_test_run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">options</span><span class="p">,</span> <span class="n">patron</span><span class="p">,</span> <span class="n">good_url</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
         <span class="n">r</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_runner</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="p">[</span><span class="n">command</span><span class="p">,</span> <span class="o">*</span><span class="n">options</span><span class="p">])</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">exit_code</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">patron</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">good_url</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">exit_code</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">patron</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">exit_code</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">assertIn</span><span class="p">(</span>
+                <span class="s2">&quot;Invalid value for &#39;--baseurl&#39;: must be in the form [host]:[port][/path]&quot;</span><span class="p">,</span> <span class="n">r</span><span class="o">.</span><span class="n">stdout</span><span class="p">)</span>
 
 <div class="viewcode-block" id="TestCLI.test_classic_fizzbuzz"><a class="viewcode-back" href="../../API/tests.test_fizzbuzz_cli.html#tests.test_fizzbuzz_cli.TestCLI.test_classic_fizzbuzz">[docs]</a>    <span class="k">def</span> <span class="nf">test_classic_fizzbuzz</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Tests classic-fizzbuzz command</span>
@@ -118,9 +124,16 @@
         <span class="sd">&quot;&quot;&quot;Tests classic-fizzbuzz-from-web command</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">options</span><span class="p">,</span> <span class="n">patron</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_options</span><span class="p">():</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">_test_run</span><span class="p">(</span><span class="n">CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND</span><span class="p">,</span>
-                           <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;--stream&#39;</span><span class="p">,</span> <span class="s1">&#39;--no-stream&#39;</span><span class="p">]),</span> <span class="o">*</span><span class="n">options</span><span class="p">],</span>
-                           <span class="n">patron</span><span class="p">)</span></div></div>
+            <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">]):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_test_run</span><span class="p">(</span><span class="n">CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND</span><span class="p">,</span>
+                               <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;--stream&#39;</span><span class="p">,</span> <span class="s1">&#39;--no-stream&#39;</span><span class="p">]),</span>
+                                <span class="o">*</span><span class="n">options</span><span class="p">],</span>
+                               <span class="n">patron</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_test_run</span><span class="p">(</span><span class="n">CLASSIC_FIZZBUZZ_FROM_WEB_COMMAND</span><span class="p">,</span>
+                               <span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;--stream&#39;</span><span class="p">,</span> <span class="s1">&#39;--no-stream&#39;</span><span class="p">]),</span>
+                                <span class="o">*</span><span class="n">options</span><span class="p">,</span> <span class="s1">&#39;--baseurl&#39;</span><span class="p">,</span> <span class="s1">&#39;bad_url&#39;</span><span class="p">],</span>
+                               <span class="n">patron</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span></div></div>
 </pre></div>
 
            </div>
