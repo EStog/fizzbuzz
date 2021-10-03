@@ -5,7 +5,7 @@
 SCRIPT_DIR="$( dirname "${BASH_SOURCE[0]}" )"
 
 echo running unittests...
-coverage run --source ./ -m pytest --doctest-modules --disable-warnings || exit 1
+pytest --doctest-modules --cov=./ --cov-report=xml --disable-warnings || exit 1
 
 echo running tests to docs...
 rm -r ./docs/source/API
