@@ -61,5 +61,5 @@ def classic_fizzbuzz_from_web_command(
     typer.echo_via_pager(str(s, r.encoding) for s in r.iter_content(chunk_size=127))
 
 
-if __name__ == '__main__':
+if __name__ == '__main__': # pragma: no cover
     app()
