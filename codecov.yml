@@ -1,0 +1,8 @@
+ignore:
+  - "*/tests/*"
+coverage:
+  status:
+    project:
+      default:
+        target: 80%    # the required coverage value
+        threshold: 10%  # the leniency in hitting the target

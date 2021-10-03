@@ -10,17 +10,17 @@ Welcome to FizzBuzz Brainstorm's documentation!
 
 To use any part of the project first run in project root directory:
 
-.. code-block:: shell
+.. code-block:: console
 
-   $> pip install -r ./requirements.txt
+   $ pip install -r ./requirements.txt
 
 
 In case you need to generate offline HTML documentation just run in project root directory:
 
-.. code-block:: shell
+.. code-block:: console
 
-   $> pip install -r ./docs/requirements.txt
-   $> ./build_docs.sh html
+   $ pip install -r ./docs/requirements.txt
+   $ ./build_docs.sh html
 
 To see other available formats run ``build_docs.sh``:
 
@@ -28,8 +28,8 @@ In case you want to run the tests, execute in project root directory:
 
 .. code-block:: console
 
-   $> pip install -r ./tests/requirements.txt
-   $> ./run_tests.sh
+   $ pip install -r ./tests/requirements.txt
+   $ ./run_tests.sh
 
 .. toctree::
    :maxdepth: 2
@@ -37,7 +37,7 @@ In case you want to run the tests, execute in project root directory:
 
    classic_fizzbuzz
    generalized_fizzbuzz
-   API/modules
+   Module docs <API/modules>
 
 Indices and tables
 ==================

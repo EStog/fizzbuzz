@@ -1,5 +1,4 @@
--r ../requirements.txt
+-r ../docs/requirements.txt
 
 pytest
-sphinx>=4.0.0
-sphinxcontrib-apidoc
+coverage

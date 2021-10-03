@@ -38,5 +38,8 @@ async def get_classic_fizzbuzz_as_text(params: _ClassicFizzBuzzParams = Depends(
 async def get_classic_fizzbuzz_as_stream(params: _ClassicFizzBuzzParams = Depends()):
     """Gives classic FizzBuzz result as a stream
     """
-    return StreamingResponse(classic_fizzbuzz_as_gen_text(params.n, params.sep),
-                             media_type='text/plain')
+    async def f():
+        for x in classic_fizzbuzz_as_gen_text(params.n, params.sep):
+            yield x
+
+    return StreamingResponse(f(), media_type='text/plain')

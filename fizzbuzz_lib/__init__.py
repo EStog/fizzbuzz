@@ -60,7 +60,6 @@ def as_text(gen: Iterator, sep: str):
         s += x
     return s
 
-
 def classic_fizzbuzz_as_text(n: int, sep: str):
     """Gives classic FizzBuzz sequence as a text where each element is separated by ``sep``"""
     return as_text(classic_fizzbuzz(n), sep)
