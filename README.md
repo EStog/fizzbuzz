@@ -1,4 +1,5 @@
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/EStog/fizzbuzz?include_prereleases) ![python|3.9](https://img.shields.io/badge/python-3.9-blue) ![repo size](https://img.shields.io/github/repo-size/EStog/fizzbuzz) ![license|MIT](https://img.shields.io/github/license/EStog/fizzbuzz) ![tests](https://github.com/EStog/fizzbuzz/actions/workflows/tests.yml/badge.svg) ![docs](https://github.com/EStog/fizzbuzz/actions/workflows/docs.yml/badge.svg) ![github-pages](https://img.shields.io/github/deployments/EStog/pathex/github-pages?label=github-pages) [![codecov](https://codecov.io/gh/EStog/fizzbuzz/branch/main/graph/badge.svg?token=JYVFXZ4LYJ)](https://codecov.io/gh/EStog/fizzbuzz)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FEStog%2Ffizzbuzz.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FEStog%2Ffizzbuzz?ref=badge_shield)
 
 # FizzBuzz brainstorm!
 
@@ -25,3 +26,7 @@ In case you want to run the tests, execute in project root directory:
 pip install -r ./tests/requirements.txt
 ./run_tests.sh
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FEStog%2Ffizzbuzz.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FEStog%2Ffizzbuzz?ref=badge_large)
