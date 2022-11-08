@@ -1,0 +1,2 @@
+*.rst linguist-detectable
+docs/source/** -linguist-documentation
