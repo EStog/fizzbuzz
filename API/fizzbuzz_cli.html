@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,7 +45,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../generalized_fizzbuzz.html">Generalized FizzBuzz</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module docs</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="fastapi_app.html">fastapi_app package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">fizzbuzz_cli module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">fizzbuzz_cli module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fizzbuzz_cli.classic_fizzbuzz_command"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz_command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fizzbuzz_cli.classic_fizzbuzz_from_web_command"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz_from_web_command()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fizzbuzz_cli.get_baseurl"><code class="docutils literal notranslate"><span class="pre">get_baseurl()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html">fizzbuzz_lib package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tests.html">tests package</a></li>
 </ul>
@@ -63,9 +70,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">fizzbuzz</a> &raquo;</li>
-      <li>fizzbuzz_cli module</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">fizzbuzz</a></li>
+      <li class="breadcrumb-item active">fizzbuzz_cli module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/API/fizzbuzz_cli.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -76,23 +83,23 @@
            <div itemprop="articleBody">
              
   <section id="module-fizzbuzz_cli">
-<span id="fizzbuzz-cli-module"></span><h1>fizzbuzz_cli module<a class="headerlink" href="#module-fizzbuzz_cli" title="Permalink to this headline"></a></h1>
+<span id="fizzbuzz-cli-module"></span><h1>fizzbuzz_cli module<a class="headerlink" href="#module-fizzbuzz_cli" title="Permalink to this heading"></a></h1>
 <p>This is a CLI to the functions defined in <a class="reference internal" href="fizzbuzz_lib.html#module-fizzbuzz_lib" title="fizzbuzz_lib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fizzbuzz_lib</span></code></a> and the web services provided by <a class="reference internal" href="fastapi_app.html#module-fastapi_app" title="fastapi_app"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastapi_app</span></code></a>. Use option <code class="docutils literal notranslate"><span class="pre">--help</span></code> to see available commands.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_cli.classic_fizzbuzz_command">
-<span class="sig-name descname"><span class="pre">classic_fizzbuzz_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.ArgumentInfo</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">sep:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_cli.html#classic_fizzbuzz_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_cli.classic_fizzbuzz_command" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.ArgumentInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_cli.html#classic_fizzbuzz_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_cli.classic_fizzbuzz_command" title="Permalink to this definition"></a></dt>
 <dd><p>Run the classsic FizzBuzz</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_cli.classic_fizzbuzz_from_web_command">
-<span class="sig-name descname"><span class="pre">classic_fizzbuzz_from_web_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.ArgumentInfo</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">sep:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">baseurl:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></em>, <em class="sig-param"><span class="pre">stream:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_cli.html#classic_fizzbuzz_from_web_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_cli.classic_fizzbuzz_from_web_command" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">classic_fizzbuzz_from_web_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.ArgumentInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sep:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baseurl:</span> <span class="pre">str</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stream:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;typer.models.OptionInfo</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_cli.html#classic_fizzbuzz_from_web_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_cli.classic_fizzbuzz_from_web_command" title="Permalink to this definition"></a></dt>
 <dd><p>Get classic FizzBuzz results from the web</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fizzbuzz_cli.get_baseurl">
-<span class="sig-name descname"><span class="pre">get_baseurl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_cli.html#get_baseurl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_cli.get_baseurl" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">get_baseurl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fizzbuzz_cli.html#get_baseurl"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fizzbuzz_cli.get_baseurl" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 </section>

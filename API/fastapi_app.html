@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,6 +45,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../generalized_fizzbuzz.html">Generalized FizzBuzz</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module docs</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">fastapi_app package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fastapi_app.get_classic_fizzbuzz_as_stream"><code class="docutils literal notranslate"><span class="pre">get_classic_fizzbuzz_as_stream()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fastapi_app.get_classic_fizzbuzz_as_text"><code class="docutils literal notranslate"><span class="pre">get_classic_fizzbuzz_as_text()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="fastapi_app.constants.html">fastapi_app.constants module</a></li>
 </ul>
@@ -69,9 +73,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">fizzbuzz</a> &raquo;</li>
-      <li>fastapi_app package</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">fizzbuzz</a></li>
+      <li class="breadcrumb-item active">fastapi_app package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/API/fastapi_app.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -82,27 +86,33 @@
            <div itemprop="articleBody">
              
   <section id="module-fastapi_app">
-<span id="fastapi-app-package"></span><h1>fastapi_app package<a class="headerlink" href="#module-fastapi_app" title="Permalink to this headline"></a></h1>
+<span id="fastapi-app-package"></span><h1>fastapi_app package<a class="headerlink" href="#module-fastapi_app" title="Permalink to this heading"></a></h1>
 <p>This module defines web services that compute FizzBuzz sequence.
 To run a server instance for manual testing use script <code class="docutils literal notranslate"><span class="pre">run_fastapi_server.sh</span></code> located in project root folder.
 Then, in a web browser, open <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a> or <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a> to see available services.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="fastapi_app.get_classic_fizzbuzz_as_stream">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_classic_fizzbuzz_as_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">fastapi_app._ClassicFizzBuzzParams</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">Depends(NoneType)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fastapi_app.html#get_classic_fizzbuzz_as_stream"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastapi_app.get_classic_fizzbuzz_as_stream" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_classic_fizzbuzz_as_stream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ClassicFizzBuzzParams</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(NoneType)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fastapi_app.html#get_classic_fizzbuzz_as_stream"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastapi_app.get_classic_fizzbuzz_as_stream" title="Permalink to this definition"></a></dt>
 <dd><p>Gives classic FizzBuzz result as a stream</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="fastapi_app.get_classic_fizzbuzz_as_text">
-<em class="property"><span class="pre">async</span> </em><span class="sig-name descname"><span class="pre">get_classic_fizzbuzz_as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span> <span class="n"><span class="pre">fastapi_app._ClassicFizzBuzzParams</span></span> <span class="o"><span class="pre">=</span></span> <span class="default_value"><span class="pre">Depends(NoneType)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fastapi_app.html#get_classic_fizzbuzz_as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastapi_app.get_classic_fizzbuzz_as_text" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">get_classic_fizzbuzz_as_text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">_ClassicFizzBuzzParams</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(NoneType)</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/fastapi_app.html#get_classic_fizzbuzz_as_text"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#fastapi_app.get_classic_fizzbuzz_as_text" title="Permalink to this definition"></a></dt>
 <dd><p>Gives classic FizzBuzz result as a single plain text</p>
 </dd></dl>
 
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="fastapi_app.constants.html">fastapi_app.constants module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fastapi_app.constants.html">fastapi_app.constants module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.CLASSIC_FIZZBUZZ_PREFIX"><code class="docutils literal notranslate"><span class="pre">CLASSIC_FIZZBUZZ_PREFIX</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.N_ARGS_NAME"><code class="docutils literal notranslate"><span class="pre">N_ARGS_NAME</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.SEP_ARGS_NAME"><code class="docutils literal notranslate"><span class="pre">SEP_ARGS_NAME</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.STREAM_PATH"><code class="docutils literal notranslate"><span class="pre">STREAM_PATH</span></code></a></li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

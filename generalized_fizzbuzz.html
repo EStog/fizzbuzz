@@ -14,7 +14,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -57,8 +59,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Generalized FizzBuzz</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Generalized FizzBuzz</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/generalized_fizzbuzz.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -69,7 +71,7 @@
            <div itemprop="articleBody">
              
   <section id="generalized-fizzbuzz">
-<h1>Generalized FizzBuzz<a class="headerlink" href="#generalized-fizzbuzz" title="Permalink to this headline"></a></h1>
+<h1>Generalized FizzBuzz<a class="headerlink" href="#generalized-fizzbuzz" title="Permalink to this heading"></a></h1>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.2.0.</span></p>
 </div>
@@ -83,18 +85,18 @@ For example, consider the following case. We have the numbers from 95 to 115, an
 </ul>
 </div></blockquote>
 <p>First let define a simple function to know if a number is palindromic:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindromic</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">is_palindromic</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">n</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
 </pre></div>
 </div>
 <p>Let then define our mapping from conditions to replacements:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">is_palindromic</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Palindromic&#39;</span><span class="p">),</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="n">is_palindromic</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Palindromic&#39;</span><span class="p">),</span>
            <span class="p">(</span><span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s1">&#39;Even&#39;</span><span class="p">)}</span>
 </pre></div>
 </div>
 <p>Then, we use <a class="reference internal" href="API/fizzbuzz_lib.html#fizzbuzz_lib.general_fizzbuzz" title="fizzbuzz_lib.general_fizzbuzz"><code class="xref py py-func docutils literal notranslate"><span class="pre">general_fizzbuzz()</span></code></a> to obtain our list:</p>
-<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fizzbuzz_lib</span> <span class="kn">import</span> <span class="n">general_fizzbuzz</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">fizzbuzz_lib</span> <span class="kn">import</span> <span class="n">general_fizzbuzz</span>
 
 <span class="n">it</span> <span class="o">=</span> <span class="n">general_fizzbuzz</span><span class="p">(</span><span class="n">iterable</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">95</span><span class="p">,</span> <span class="mi">116</span><span class="p">),</span> <span class="n">mapping</span><span class="o">=</span><span class="n">mapping</span><span class="p">,</span>
                       <span class="n">default</span><span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span> <span class="n">fusion</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ac</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="p">(</span><span class="n">ac</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ac</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>

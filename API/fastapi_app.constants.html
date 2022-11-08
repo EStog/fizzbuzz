@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -43,6 +45,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../generalized_fizzbuzz.html">Generalized FizzBuzz</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module docs</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="fastapi_app.html">fastapi_app package</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fastapi_app.html#fastapi_app.get_classic_fizzbuzz_as_stream"><code class="docutils literal notranslate"><span class="pre">get_classic_fizzbuzz_as_stream()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="fastapi_app.html#fastapi_app.get_classic_fizzbuzz_as_text"><code class="docutils literal notranslate"><span class="pre">get_classic_fizzbuzz_as_text()</span></code></a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="fastapi_app.html#submodules">Submodules</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">fastapi_app.constants module</a></li>
 </ul>
@@ -69,10 +73,10 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">fizzbuzz</a> &raquo;</li>
-          <li><a href="fastapi_app.html">fastapi_app package</a> &raquo;</li>
-      <li>fastapi_app.constants module</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">fizzbuzz</a></li>
+          <li class="breadcrumb-item"><a href="fastapi_app.html">fastapi_app package</a></li>
+      <li class="breadcrumb-item active">fastapi_app.constants module</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/API/fastapi_app.constants.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,29 +87,29 @@
            <div itemprop="articleBody">
              
   <section id="module-fastapi_app.constants">
-<span id="fastapi-app-constants-module"></span><h1>fastapi_app.constants module<a class="headerlink" href="#module-fastapi_app.constants" title="Permalink to this headline"></a></h1>
+<span id="fastapi-app-constants-module"></span><h1>fastapi_app.constants module<a class="headerlink" href="#module-fastapi_app.constants" title="Permalink to this heading"></a></h1>
 <p>This module define constants that are common to <a class="reference internal" href="fizzbuzz_cli.html#module-fizzbuzz_cli" title="fizzbuzz_cli"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fizzbuzz_cli</span></code></a> and <a class="reference internal" href="fastapi_app.html#module-fastapi_app" title="fastapi_app"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fastapi_app</span></code></a>.</p>
 <dl class="py data">
 <dt class="sig sig-object py" id="fastapi_app.constants.CLASSIC_FIZZBUZZ_PREFIX">
-<span class="sig-name descname"><span class="pre">CLASSIC_FIZZBUZZ_PREFIX</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'classic-fizzbuzz'</span></em><a class="headerlink" href="#fastapi_app.constants.CLASSIC_FIZZBUZZ_PREFIX" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">CLASSIC_FIZZBUZZ_PREFIX</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'classic-fizzbuzz'</span></em><a class="headerlink" href="#fastapi_app.constants.CLASSIC_FIZZBUZZ_PREFIX" title="Permalink to this definition"></a></dt>
 <dd><p>The prefix used for the classic FizzBuzz web services</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="fastapi_app.constants.N_ARGS_NAME">
-<span class="sig-name descname"><span class="pre">N_ARGS_NAME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'n'</span></em><a class="headerlink" href="#fastapi_app.constants.N_ARGS_NAME" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">N_ARGS_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'n'</span></em><a class="headerlink" href="#fastapi_app.constants.N_ARGS_NAME" title="Permalink to this definition"></a></dt>
 <dd><p>The name of the integer parameter in the classic FizzBuzz web services</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="fastapi_app.constants.SEP_ARGS_NAME">
-<span class="sig-name descname"><span class="pre">SEP_ARGS_NAME</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'sep'</span></em><a class="headerlink" href="#fastapi_app.constants.SEP_ARGS_NAME" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">SEP_ARGS_NAME</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'sep'</span></em><a class="headerlink" href="#fastapi_app.constants.SEP_ARGS_NAME" title="Permalink to this definition"></a></dt>
 <dd><p>The name of the separator parameter in the classic FizzBuzz web services</p>
 </dd></dl>
 
 <dl class="py data">
 <dt class="sig sig-object py" id="fastapi_app.constants.STREAM_PATH">
-<span class="sig-name descname"><span class="pre">STREAM_PATH</span></span><em class="property"> <span class="pre">=</span> <span class="pre">'stream/'</span></em><a class="headerlink" href="#fastapi_app.constants.STREAM_PATH" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">STREAM_PATH</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'stream/'</span></em><a class="headerlink" href="#fastapi_app.constants.STREAM_PATH" title="Permalink to this definition"></a></dt>
 <dd><p>The path of the streamed classic FizzBuzz web service</p>
 </dd></dl>
 

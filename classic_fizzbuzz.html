@@ -14,7 +14,9 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -62,8 +64,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Classic FizzBuzz</li>
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Classic FizzBuzz</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/classic_fizzbuzz.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -74,7 +76,7 @@
            <div itemprop="articleBody">
              
   <section id="classic-fizzbuzz">
-<h1>Classic FizzBuzz<a class="headerlink" href="#classic-fizzbuzz" title="Permalink to this headline"></a></h1>
+<h1>Classic FizzBuzz<a class="headerlink" href="#classic-fizzbuzz" title="Permalink to this heading"></a></h1>
 <p>The classic FizzBuzz problem <a class="reference external" href="https://wiki.c2.com/?FizzBuzzTest">description</a> is as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that prints the numbers from 1 to 100.
 But for multiples of three print “Fizz” instead of the
@@ -94,7 +96,7 @@ numbers which are multiples of both three and five print
 </pre></div>
 </div>
 <section id="changing-the-description">
-<h2>Changing the description<a class="headerlink" href="#changing-the-description" title="Permalink to this headline"></a></h2>
+<h2>Changing the description<a class="headerlink" href="#changing-the-description" title="Permalink to this heading"></a></h2>
 <p>To solve the problem a more flexible description may be considered:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;Write a program that generates the numbers from 1 to n.
 But for multiples of three gives “Fizz” instead of the
@@ -127,7 +129,7 @@ numbers which are multiples of both three and five gives
 <p>In <a class="reference internal" href="API/fizzbuzz_lib.html#module-fizzbuzz_lib" title="fizzbuzz_lib"><code class="xref py py-mod docutils literal notranslate"><span class="pre">fizzbuzz_lib</span></code></a> you may find some other useful functions.</p>
 </section>
 <section id="cli-script">
-<h2>CLI script<a class="headerlink" href="#cli-script" title="Permalink to this headline"></a></h2>
+<h2>CLI script<a class="headerlink" href="#cli-script" title="Permalink to this heading"></a></h2>
 <p>A CLI script <a class="footnote-reference brackets" href="#ftyper" id="id1">1</a> <code class="docutils literal notranslate"><span class="pre">fizzbuzz_cli.py</span></code> is available to execute this function from console <a class="footnote-reference brackets" href="#fn" id="id2">2</a>:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fizzbuzz $&gt; ./fizzbuzz_cli.py <span class="m">10</span>
 <span class="m">1</span> <span class="m">2</span> Fizz <span class="m">4</span> Buzz Fizz <span class="m">7</span> <span class="m">8</span> Fizz Buzz
@@ -136,7 +138,7 @@ numbers which are multiples of both three and five gives
 <p>See <code class="docutils literal notranslate"><span class="pre">fizzbuzz_cli.py</span> <span class="pre">--help</span></code> for other options.</p>
 </section>
 <section id="web-services">
-<h2>Web services<a class="headerlink" href="#web-services" title="Permalink to this headline"></a></h2>
+<h2>Web services<a class="headerlink" href="#web-services" title="Permalink to this heading"></a></h2>
 <p>Web services <a class="footnote-reference brackets" href="#ffastapi" id="id3">3</a> may also be used to generate the FizzBuzz sequence. Just execute <code class="docutils literal notranslate"><span class="pre">run_fastapi_server.sh</span></code> and then open in a browser <a class="reference external" href="http://localhost:8000/docs">http://localhost:8000/docs</a>. A description of the available services will appear. You may also use <a class="reference external" href="http://localhost:8000/redoc">http://localhost:8000/redoc</a> to see the documentation in an alternative scheme.</p>
 <p>The CLI script has also options to act as a client to consume the web services. See <code class="docutils literal notranslate"><span class="pre">fizzbuzz_cli.py</span> <span class="pre">cfbw</span> <span class="pre">--help</span></code> for more details.</p>
 <p class="rubric">Footnotes</p>

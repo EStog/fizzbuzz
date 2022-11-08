@@ -14,7 +14,9 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -63,8 +65,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>fizzbuzz</li>
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">fizzbuzz</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/API/modules.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -75,22 +77,49 @@
            <div itemprop="articleBody">
              
   <section id="fizzbuzz">
-<h1>fizzbuzz<a class="headerlink" href="#fizzbuzz" title="Permalink to this headline"></a></h1>
+<h1>fizzbuzz<a class="headerlink" href="#fizzbuzz" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="fastapi_app.html">fastapi_app package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.html#fastapi_app.get_classic_fizzbuzz_as_stream"><code class="docutils literal notranslate"><span class="pre">get_classic_fizzbuzz_as_stream()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fastapi_app.html#fastapi_app.get_classic_fizzbuzz_as_text"><code class="docutils literal notranslate"><span class="pre">get_classic_fizzbuzz_as_text()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="fastapi_app.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="fastapi_app.constants.html">fastapi_app.constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fastapi_app.constants.html">fastapi_app.constants module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.CLASSIC_FIZZBUZZ_PREFIX"><code class="docutils literal notranslate"><span class="pre">CLASSIC_FIZZBUZZ_PREFIX</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.N_ARGS_NAME"><code class="docutils literal notranslate"><span class="pre">N_ARGS_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.SEP_ARGS_NAME"><code class="docutils literal notranslate"><span class="pre">SEP_ARGS_NAME</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="fastapi_app.constants.html#fastapi_app.constants.STREAM_PATH"><code class="docutils literal notranslate"><span class="pre">STREAM_PATH</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="fizzbuzz_cli.html">fizzbuzz_cli module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="fizzbuzz_lib.html">fizzbuzz_lib package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fizzbuzz_cli.html">fizzbuzz_cli module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_cli.html#fizzbuzz_cli.classic_fizzbuzz_command"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz_command()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_cli.html#fizzbuzz_cli.classic_fizzbuzz_from_web_command"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz_from_web_command()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_cli.html#fizzbuzz_cli.get_baseurl"><code class="docutils literal notranslate"><span class="pre">get_baseurl()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fizzbuzz_lib.html">fizzbuzz_lib package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html#fizzbuzz_lib.as_text"><code class="docutils literal notranslate"><span class="pre">as_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz_as_gen_text"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz_as_gen_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html#fizzbuzz_lib.classic_fizzbuzz_as_text"><code class="docutils literal notranslate"><span class="pre">classic_fizzbuzz_as_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html#fizzbuzz_lib.gen_text"><code class="docutils literal notranslate"><span class="pre">gen_text()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="fizzbuzz_lib.html#fizzbuzz_lib.general_fizzbuzz"><code class="docutils literal notranslate"><span class="pre">general_fizzbuzz()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tests.html">tests package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tests.html#submodules">Submodules</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_fastapi_app.html">tests.test_fastapi_app module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="tests.test_fizzbuzz_cli.html">tests.test_fizzbuzz_cli module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_fastapi_app.html">tests.test_fastapi_app module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_fastapi_app.html#tests.test_fastapi_app.TestFastAPIApp"><code class="docutils literal notranslate"><span class="pre">TestFastAPIApp</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tests.test_fizzbuzz_cli.html">tests.test_fizzbuzz_cli module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="tests.test_fizzbuzz_cli.html#tests.test_fizzbuzz_cli.TestCLI"><code class="docutils literal notranslate"><span class="pre">TestCLI</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
